@@ -20,8 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->penWidth = 1;
     this->chartName = "凸轮曲线";
     filePath = QDir::currentPath();
-    ui->customPlot->plotLayout()->insertRow(0);
-    ui->customPlot->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->customPlot, chartName));
+    ui->customPlot->plotLayout()->insertRow(0); // insert an empty row above the axis rect
+    ui->customPlot->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->customPlot, chartName)); // place the title in the empty cell
     ui->nowDateEdit->setDate(QDate::currentDate());   //set deadline time with current system time
     MainWindow::showMaximized();
     initSetCustomPlot(ui->customPlot);
